@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
   const daftarKhodam = [
@@ -45,19 +45,29 @@ export default function Home() {
   const [showResult, setShowResult] = useState(false);
   const [khodam, setKhodam] = useState("");
   const [loading, setLoading] = useState(false); // State untuk menunjukkan loading
+  const usedIndexes = useRef<number[]>([]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setLoading(true); // Set loading menjadi true saat proses submit dimulai
-    // Lakukan logika pengecekan khodam berdasarkan nama yang dimasukkan
-    // Misalnya, di sini Anda bisa menentukan nama khodam secara acak atau dari data tertentu
-    const randomIndex = Math.floor(Math.random() * daftarKhodam.length);
+    setLoading(true);
+
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * daftarKhodam.length);
+    } while (usedIndexes.current.includes(randomIndex) && usedIndexes.current.length < daftarKhodam.length);
+
+    usedIndexes.current.push(randomIndex);
+    if (usedIndexes.current.length >= daftarKhodam.length) {
+      usedIndexes.current = [];
+    }
+
     const randomKhodam = daftarKhodam[randomIndex];
+
     setTimeout(() => {
       setKhodam(randomKhodam);
       setShowResult(true);
-      setLoading(false); // Set loading kembali menjadi false setelah selesai
-    }, 2000); // Contoh setTimeout untuk simulasi delay 2 detik
+      setLoading(false);
+    }, 2000);
   };
 
   const resetForm = () => {
