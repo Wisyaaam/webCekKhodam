@@ -71,7 +71,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
-        <h1 className="text-white text-[50px] mb-10 relative font-Cafe">
+        <h1 className="text-white text-[36px] md:text-[50px] mb-10 relative font-Cafe">
           Cek Khodam <span className="text-[#54e5ff]">Kamu!</span>
         </h1>
         <div className="bg-black p-8 rounded-lg shadow-lg max-w-md w-full backdrop-blur-lg backdrop-filter bg-opacity-0 border border-[#54e5ff]">
@@ -107,14 +107,14 @@ export default function Home() {
           )}
           {showResult && (
             <div className="text-center">
-              <h1 className="text-white text-[20px] font-light mb-4">Selamat <span className="text-[#93f3fa]">{nama}</span>, Khodam kamu adalah</h1>
-              <p className="text-[#93f3fa] text-[47px] font-bold mb-4">{khodam}</p>
-              <h1 className="text-white text-[20px] font-light mb-4">Jangan lupa share ke teman teman kamu agar mereka juga tahu khodam yang ada di diri nya! 👻👻👻</h1>
+              <h1 className="text-white text-[18px] md:text-[20px] font-light mb-4">Selamat <span className="text-[#93f3fa]">{nama}</span>, Khodam kamu adalah</h1>
+              <p className="text-[#93f3fa] text-[36px] md:text-[47px] font-bold mb-4">{khodam}</p>
+              <h1 className="text-white text-[18px] md:text-[20px] font-light mb-4">Jangan lupa share ke teman teman kamu agar mereka juga tahu khodam yang ada di diri nya! 👻👻👻</h1>
               <button onClick={resetForm}
                 style={{
                   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
                 }}
-                className="bg-[#29a7be6e] hover:bg-[#29a8bea4] text-white px-4 py-2 rounded-full text-[15px] w-[200px] focus:outline-none">Coba Nama Lain👻</button>
+                className="bg-[#29a7be6e] hover:bg-[#29a8bea4] text-white px-4 py-2 rounded-full text-[15px] md:text-sm w-[200px] focus:outline-none">Coba Nama Lain👻</button>
             </div>
           )}
         </div>
@@ -123,7 +123,7 @@ export default function Home() {
             href="https://trakteer.id/icamganteng/tip?quantity=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="block wave-sigma bg-[#116a7a71] hover:bg-[#116a7a] font-semibold text-[20px] h-[40px] text-white px-4 py-2 rounded-full text-sm text-center w-[250px] mx-auto focus:outline-none"
+            className="block wave-sigma bg-[#116a7a71] hover:bg-[#116a7a] font-semibold text-[12px] md:text-[13px] h-[40px] text-white px-4 py-2 rounded-full text-center w-[250px] md:w-[200px] mx-auto focus:outline-none"
             style={{
               boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
             }}
